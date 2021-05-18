@@ -1,4 +1,5 @@
-def partition(array, first, last):  # function to split array into two parts (s1 < pivot and s2 >= pivot) and determine place of pivot
+def partition(array, first, last):  # function to split array into two parts (s1 < pivot and s2 >= pivot) and
+    # determine place of pivot
 
     last_s1 = first  # sets end of s1
     first_unknown = first + 1  # determines start of part which does not belong to s1 or s2 yet

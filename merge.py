@@ -1,40 +1,33 @@
-def mergeSort(arr):
+def merge_sort(arr):
     if len(arr) > 1:
 
+        mid = len(arr) // 2
 
-        mid = len(arr)//2
+        left = arr[:mid]
 
+        right = arr[mid:]
 
-        Left = arr[:mid]
+        merge_sort(left)
 
-
-        Right = arr[mid:]
-
-
-        mergeSort(Left)
-
-
-        mergeSort(Right)
+        merge_sort(right)
 
         i = j = k = 0
 
-
-        while i < len(Left) and j < len(Right):
-            if Left[i] < Right[j]:
-                arr[k] = Left[i]
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k] = left[i]
                 i += 1
             else:
-                arr[k] = Right[j]
+                arr[k] = right[j]
                 j += 1
             k += 1
 
-
-        while i < len(Left):
-            arr[k] = Left[i]
+        while i < len(left):
+            arr[k] = left[i]
             i += 1
             k += 1
 
-        while j < len(Right):
-            arr[k] = Right[j]
+        while j < len(right):
+            arr[k] = right[j]
             j += 1
             k += 1

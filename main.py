@@ -1,9 +1,10 @@
-import random  # imports random class for use in generating random array
-import time  # imports time class to measure time taken by program
-import insertion  # imports insertion class to access insertion sort function
-import quick  # imports quick class to access quick sort function
-import bubble  # imports bubble class to access bubble sort function
-import merge  # imports merge class to access merge sort function
+import random
+import time
+import insertion
+import quick
+import bubble
+import merge
+import selection
 
 
 def copy_array(array, n):  # function to copy contents of array
@@ -39,12 +40,20 @@ print(f"Runtime for sorting array using Quicksort = {time.time() - start}\n")
 
 temp = copy_array(ar, size)
 
-bubble.bubbleSort(temp)
+bubble.bubble_sort(temp)
 
 temp = copy_array(ar, size)
-start = time.time()  # start time for Mergesort
+start = time.time()  # start time for Merge sort
 
-merge.mergeSort(temp)
+merge.merge_sort(temp)
 
-print(f"Array sorted using Mergesort = {temp}\n")
-print(f"Runtime for sorting array using Mergesort = {time.time() - start}\n")
+print(f"Array sorted using Merge sort = {temp}\n")
+print(f"Runtime for sorting array using Merge sort = {time.time() - start}\n")
+
+temp = copy_array(ar, size)
+start = time.time()  # start time for selection sort
+
+selection.selection_sort(temp)
+
+print(f"Array sorted using Selection sort = {temp}\n")
+print(f"Runtime for sorting array using Selection sort = {time.time() - start}\n")
