@@ -8,14 +8,14 @@ def _right(i):
 
 
 def _max_heapify(array, heap_size, i):
-    l = _left(i)
-    r = _right(i)
-    if l < heap_size and array[l] > array[i]:
-        largest = l
+    left = _left(i)
+    right = _right(i)
+    if left < heap_size and array[left] > array[i]:
+        largest = left
     else:
         largest = i
-    if r < heap_size and array[r] > array[largest]:
-        largest = r
+    if right < heap_size and array[right] > array[largest]:
+        largest = right
     if largest != i:
         array[i], array[largest] = array[largest], array[i]
         _max_heapify(array, heap_size, largest)

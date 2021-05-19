@@ -7,12 +7,12 @@ def partition(array, first, last):  # function to split array into two parts (s1
     while first_unknown <= last:  # loop to go over all unknown part
         if array[first_unknown] < array[first]:
             last_s1 += 1  # increases size of s1 to hold new element
-            array[first_unknown], array[last_s1] = array[last_s1], array[first_unknown]   # swaps first element in
+            array[first_unknown], array[last_s1] = array[last_s1], array[first_unknown]  # swaps first element in
             # unknown part with last element in s1
 
         first_unknown += 1  # point to next element in unknown part
 
-    array[first], array[last_s1] = array[last_s1], array[first] # swaps first element in array (pivot) with last
+    array[first], array[last_s1] = array[last_s1], array[first]  # swaps first element in array (pivot) with last
     # element in s1 for pivot to be between s1 and s2
     return last_s1
 

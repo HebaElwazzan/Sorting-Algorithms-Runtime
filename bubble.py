@@ -1,12 +1,4 @@
-import time
-
-
-# from numpy.random import seed
-# from numpy.random import randint
-# import matplotlib.pyplot as plt
-
 def bubble_sort(arr):
-    start = time.time()
 
     n = len(arr)
 
@@ -21,4 +13,3 @@ def bubble_sort(arr):
                 flag = 1
         if not flag:
             break
-

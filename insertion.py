@@ -1,10 +1,6 @@
-import time  # imports time class to measure time taken by sorting method
-
-
 def sort_by_insertion(array):
 
     n = len(array)
-    start = time.time()  # start time of sorting
 
     for x in range(1, n):  # x starts from 1 since first element in array is automatically put in sorted part
         key = array[x]  # key = first element in unsorted part
@@ -16,5 +12,3 @@ def sort_by_insertion(array):
             hole -= 1  # decrements hole to go over next element in the sorted part
 
         array[hole] = key  # replaces value of current element with value of key
-
-
