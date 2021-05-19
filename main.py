@@ -5,6 +5,7 @@ import quick
 import bubble
 import merge
 import selection
+import heapsort
 
 
 def copy_array(array, n):  # function to copy contents of array
@@ -57,3 +58,11 @@ selection.selection_sort(temp)
 
 print(f"Array sorted using Selection sort = {temp}\n")
 print(f"Runtime for sorting array using Selection sort = {time.time() - start}\n")
+
+temp = copy_array(ar, size)
+start = time.time()  # start time for heapsort
+
+heapsort.heapsort(temp)
+
+print(f"Array sorted using Heapsort = {temp}\n")
+print(f"Runtime for sorting array using Heapsort = {time.time() - start}\n")
