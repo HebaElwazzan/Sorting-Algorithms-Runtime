@@ -42,8 +42,11 @@ def run_sort(array, sorting_func):
     return (end_time - start_time) * 1000
 
 
+# this function generates different array sizes, sorts them with the 6 sorting techniques, then plots runtime against
+# array size
 def generate_data():
-    size_values = [10, 50, 100, 200, 500, 750, 1000, 2000, 5000, 7500, 10000]
+    size_values = [10, 50, 100, 200, 500, 750, 1000, 2000, 5000, 7500, 10000]  # Recursion limit is reached if we try to
+    # increase the array size beyond 10,000. We could have increased the limit but we weren't sure if we should
     bubble_values = []
     insertion_values = []
     selection_values = []
