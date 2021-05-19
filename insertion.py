@@ -1,8 +1,9 @@
 import time  # imports time class to measure time taken by sorting method
 
 
-def sort_by_insertion(array, n):
+def sort_by_insertion(array):
 
+    n = len(array)
     start = time.time()  # start time of sorting
 
     for x in range(1, n):  # x starts from 1 since first element in array is automatically put in sorted part
