@@ -24,13 +24,16 @@ def generate_dataset(size):
 
     for i in range(size):  # loop to replace the zeros in array with random numbers
         array[i] = int(random.random() * 10)  # random numbers from 0 to 9
-
+    if size == 10:
+        print("Dataset to be sorted: ")
+        print(array)
     return array
 
 
 # function that runs specified sort and returns time in milliseconds taken for run
-def run_sort(array, sorting_func):
+def run_sort(array, sorting_func, sorting_name):
     temp = copy_array(array)
+    print("Now sorting using " + sorting_name + " array of size " + str(len(array)))
     if sorting_func == quick.sort_by_quicksort:
         start_time = time.time()
         sorting_func(temp, 0, len(array) - 1)
@@ -39,14 +42,19 @@ def run_sort(array, sorting_func):
         start_time = time.time()
         sorting_func(temp)
         end_time = time.time()
-    return (end_time - start_time) * 1000
+    if len(temp) == 10:
+        print("Sorted array using " + sorting_name)
+        print(temp)
+    runtime = (end_time - start_time) * 1000
+    print("Runtime in milliseconds: " + str(runtime))
+    return runtime
 
 
 # this function generates different array sizes, sorts them with the 6 sorting techniques, then plots runtime against
 # array size
 def generate_data():
-    size_values = [10, 50, 100, 200, 500, 750, 1000, 2000, 5000, 7500, 10000]  # Recursion limit is reached if we try to
-    # increase the array size beyond 10,000. We could have increased the limit but we weren't sure if we should
+
+    size_values = [10, 100, 1000, 10000, 100000]
     bubble_values = []
     insertion_values = []
     selection_values = []
@@ -55,12 +63,16 @@ def generate_data():
     heap_values = []
     for value in size_values:
         array = generate_dataset(value)
-        bubble_values.append(run_sort(array, bubble.bubble_sort))
-        insertion_values.append(run_sort(array, insertion.sort_by_insertion))
-        selection_values.append(run_sort(array, selection.selection_sort))
-        merge_values.append(run_sort(array, merge.merge_sort))
-        quick_values.append(run_sort(array, quick.sort_by_quicksort))
-        heap_values.append(run_sort(array, heapsort.heapsort))
+        bubble_values.append(run_sort(array, bubble.bubble_sort, "bubble sort"))
+        insertion_values.append(run_sort(array, insertion.sort_by_insertion, "insertion sort"))
+        selection_values.append(run_sort(array, selection.selection_sort, "selection sort"))
+        merge_values.append(run_sort(array, merge.merge_sort, "merge sort"))
+        try:
+            quick_values.append(run_sort(array, quick.sort_by_quicksort, "quick sort"))
+        except RecursionError:
+            print("Maximum recursion depth reached, quick sort cannot compute")
+            quick_values.append(None)
+        heap_values.append(run_sort(array, heapsort.heapsort, "heap sort"))
     plt.plot(size_values, bubble_values, label="Bubble Sort")
     plt.plot(size_values, insertion_values, label="Insertion Sort")
     plt.plot(size_values, selection_values, label="Selection Sort")

@@ -1,3 +1,4 @@
+
 def partition(array, first, last):  # function to split array into two parts (s1 < pivot and s2 >= pivot) and
     # determine place of pivot
 
