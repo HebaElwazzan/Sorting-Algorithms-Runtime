@@ -43,7 +43,7 @@ def run_sort(array, sorting_func):
 
 
 def generate_data():
-    size_values = [100, 1000, 5000, 10000, 50000, 100000, 200000, 300000]
+    size_values = [10, 50, 100, 200, 500, 750, 1000, 2000, 5000, 7500, 10000]
     bubble_values = []
     insertion_values = []
     selection_values = []
@@ -64,7 +64,14 @@ def generate_data():
     plt.plot(size_values, merge_values, label="Merge Sort")
     plt.plot(size_values, quick_values, label="Quick Sort")
     plt.plot(size_values, heap_values, label="Heapsort")
+    plt.title("Time Performance of Sorting Algorithms")
     plt.xlabel("Array size")
     plt.ylabel("Time (milliseconds)")
     plt.legend()
     plt.show()
+    print(bubble_values)
+    print(insertion_values)
+    print(selection_values)
+    print(merge_values)
+    print(quick_values)
+    print(heap_values)

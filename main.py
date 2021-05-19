@@ -7,6 +7,7 @@ import merge
 import selection
 import heapsort
 import plotting
+import sys
 
 #
 # def copy_array(array, n):  # function to copy contents of array
@@ -68,6 +69,5 @@ import plotting
 # print(f"Array sorted using Heapsort = {temp}\n")
 # print(f"Runtime for sorting array using Heapsort = {time.time() - start}\n")
 
+sys.setrecursionlimit(1500)  # this is to avoid hitting the recursion limit
 plotting.generate_data()
-
-

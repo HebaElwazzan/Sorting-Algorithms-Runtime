@@ -17,5 +17,4 @@ def sort_by_insertion(array):
 
         array[hole] = key  # replaces value of current element with value of key
 
-    print(f"Array sorted using Insertion Sort = {array}\n")
-    print(f"Runtime for sorting array using Insertion Sort = {time.time() - start}\n")
+

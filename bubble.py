@@ -22,5 +22,3 @@ def bubble_sort(arr):
         if not flag:
             break
 
-    print(f"Array sorted using Bubble Sort = {arr}\n")
-    print(f"Runtime for sorting array using Bubble Sort = {time.time() - start}\n")
